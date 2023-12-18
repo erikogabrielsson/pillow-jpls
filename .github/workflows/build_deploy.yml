@@ -61,6 +61,8 @@ jobs:
           CIBW_BEFORE_TEST: "pip install Pillow --only-binary=:all:"
           CIBW_TEST_COMMAND: pytest -v {project}/test
           CIBW_ARCHS_MACOS: "x86_64 universal2 arm64"
+          CIBW_ARCHS_LINUX: "x86_64 i686 aarch64"
+          CIBW_ARCHS_WINDOWS: "AMD64 x86"
           CIBW_BUILD_VERBOSITY: 1
           CIBW_TEST_SKIP: "*-macosx_arm64"
           # Pybind std::variant support requires 10.14+
